@@ -1,3 +1,4 @@
+#Anton Nguyen encoder
 def encrypt(password):
     encrypt = []                        #initializes array
     for element in password:
