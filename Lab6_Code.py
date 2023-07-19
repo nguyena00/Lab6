@@ -8,6 +8,15 @@ def encrypt(password):
     return encrypt      #returns string
 
 
+# Christian Garza decoder
+def decoder(string):
+    decoded_password = ''
+    for i in string:
+        digit = str(int(i) - 3)
+        decoded_password += digit
+    return decoded_password
+
+
 while True:
     #initializes menu
     print('''Menu
@@ -20,11 +29,12 @@ while True:
     option = int(input('Pleaser enter an option: '))
     if option == 1:
         password = (input('Please enter your password to encode: '))
-        encrypted = encrypt(password)
+        encrypted = str(encrypt(password))
         print('Your password has been encoded and stored!\n')
 
     if option == 2:
-        pass
+        print(f'The encoded password is {encrypted},', end=' ')
+        print(f'and the original password is {decoder(encrypted)}.\n')
 
     if option == 3:
         break
